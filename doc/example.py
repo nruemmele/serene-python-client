@@ -101,6 +101,9 @@ postalCodeLookup.csv, City, isPartOf, Place
 # ===========
 #    SETUP
 # ===========
+import os
+os.environ["no_proxy"]="localhost,127.0.0.0,127.0.1.1,127.0.1.1,127.0.0.1"
+
 try:
     import serene
 except ImportError as e:
@@ -108,11 +111,19 @@ except ImportError as e:
     sys.path.insert(0, '.')
     import serene
 
-import datetime
 import pandas as pd
-import os
+import logging
+rootLogger = logging.getLogger()
+logging_level = logging.DEBUG
+rootLogger.setLevel(logging_level)
 
 from serene import SSD, Status, DataProperty, Mapping, ObjectProperty, Column, Class, DataNode, ClassNode
+
+
+ontology_local = serene.Ontology("/home/natalia/PycharmProjects/inspector-derbin/models/schema-inspector.ttl")
+ontology_local.show(outfile="/tmp/sample-derbin.dot")
+print("Showing the local ontology...")
+input("Press enter to continue...")
 
 # We have these datasets:
 #
@@ -153,10 +164,13 @@ print(sn)
 print()
 print("First we upload some datasets...")
 data_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "tests", "resources", "data")
+print("Data path ", data_path)
 owl_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "tests", "resources", "owl")
+print("Owl path ", owl_path)
 
-data_path = os.path.join(os.curdir, "tests", "resources", "data")
-owl_path = os.path.join(os.curdir, "tests", "resources", "owl")
+# print("Current dir ", os.curdir)
+# data_path = os.path.join(os.curdir, "tests", "resources", "data")
+# owl_path = os.path.join(os.curdir, "tests", "resources", "owl")
 
 
 business_info = sn.datasets.upload(os.path.join(data_path, 'businessInfo.csv'))

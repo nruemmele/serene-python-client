@@ -54,6 +54,9 @@ log.addHandler(my_handler)
 #  Start with a connection to the server...
 #
 # =======================
+import os
+os.environ['no_proxy'] = '127.0.0.1,localhost'
+
 sn = serene.Serene(
     host='127.0.0.1',
     port=8080,
@@ -406,7 +409,7 @@ import yaml
 # =======================
 
 chuffed_lookup_path = os.path.join(project_path, "stp", "minizinc")
-result_csv = os.path.join(project_path, "stp", "resources", "results", "soccer_optimal_pats.csv")
+result_csv = os.path.join(project_path, "stp", "resources", "results", "benchmark_soccer_ooriginal3.csv")
 with open(result_csv, "w+") as f:
     csvf = csv.writer(f)
     csvf.writerow(["experiment", "octopus", "dataset", "name", "ssd",
@@ -432,12 +435,12 @@ with open(result_csv, "w+") as f:
 
     for cur_id in sample_range:
         print("Currently selected ssd: ", cur_id)
-        num = 11
+        num = 11 # leave one out setting
         train_sample = sample_range[:max(cur_id + num + 1 - len_sample, 0)] + sample_range[cur_id + 1: cur_id + 1 + num]
         print("     train sample size: ", num)
 
         try:
-            octo = al.create_octopus(sn, new_ssds, train_sample, ontologies)
+            octo = al.create_octopus(sn, ssds, train_sample, ontologies)
         except Exception as e:
             logging.error("Octopus creation failed: {}".format(e))
             print("Octopus creation failed: {}".format(e))
@@ -445,36 +448,28 @@ with open(result_csv, "w+") as f:
 
         octo_csv = os.path.join(project_path, "stp", "resources", "storage",
                                 "patterns.{}.csv".format(octo.id))
-        pattern_time = None
-        start_time = time.time()
-        # try:
-        #     with open(os.path.join(project_path, "stp", 'config.yaml'), 'r') as stream:
-        #         config = yaml.load(stream)
-        #     print("Serene-path: ", config["embeds-path"])
-        #     octo_patterns = octo.get_patterns(octo_csv, serene_path=str(config["embeds-path"]))
-        #     pattern_time = time.time() - start_time
-        #     print("Patterns obtained")
-        # except Exception as e:
-        #     print("failed to get patterns: {}".format(e))
-        #     logging.warning("failed to get patterns: {}".format(e))
-        #     octo_patterns = None
-        octo_patterns = None
+        try:
+            octo_patterns = octo.get_patterns(octo_csv)
+        except Exception as e:
+            print("failed to get patterns: {}".format(e))
+            logging.warning("failed to get patterns: {}".format(e))
+            octo_patterns = None
         print("Uploaded octopus:", octo)
 
         chuffed_paths = [
             # (os.path.join(chuffed_lookup_path, "chuffed-rel2onto_20170718"),
             #  True, None, False, 1.0),
             # (os.path.join(chuffed_lookup_path, "chuffed-rel2onto_20170722"), True, None, True, 1.0),
-            # (os.path.join(chuffed_lookup_path, "chuffed-rel2onto_20170728"),
-            #  False, octo_patterns, False, 1.0),
+            (os.path.join(chuffed_lookup_path, "chuffed-rel2onto_20170728"),
+             False, octo_patterns, False, 1.0),
             (os.path.join(chuffed_lookup_path, "chuffed-rel2onto_20170728"),
              False, octo_patterns, True, 1.0),
             (os.path.join(chuffed_lookup_path, "chuffed-rel2onto_20170728"),
              False, octo_patterns, True, 5.0),
-            # (os.path.join(chuffed_lookup_path, "chuffed-rel2onto_20170728"),
-            #  False, octo_patterns, True, 10.0),
-            # (os.path.join(chuffed_lookup_path, "chuffed-rel2onto_20170728"),
-            #  False, octo_patterns, True, 20.0),
+            (os.path.join(chuffed_lookup_path, "chuffed-rel2onto_20170728"),
+             False, octo_patterns, True, 10.0),
+            (os.path.join(chuffed_lookup_path, "chuffed-rel2onto_20170728"),
+             False, octo_patterns, True, 20.0),
         ]
 
         print("Getting labels in the training set")
@@ -483,7 +478,7 @@ with open(result_csv, "w+") as f:
             train_labels += [d.full_label for d in new_ssds[i].data_nodes]
         train_labels = set(train_labels)
 
-        ssd = new_ssds[cur_id]
+        ssd = ssds[cur_id]
         dataset = [ds for ds in datasets if ds.filename == ssd.name][0]
         # we tell here the correct columns
         column_names = [c.name for c in ssd.columns]
@@ -513,11 +508,11 @@ with open(result_csv, "w+") as f:
             csvf.writerows(res)
 
         # karma approach
-        # print("---> trying karma")
-        # res = al.do_karma(sn, octo, dataset, cor_ssd, ssd, train_flag=False,
-        #                   accu=sm_accuracy, experiment="eknown_{}".format(len(train_sample)))
-        # benchmark_results += res
-        # csvf.writerows(res)
+        print("---> trying karma")
+        res = al.do_karma(sn, octo, dataset, cor_ssd, ssd, train_flag=False,
+                          accu=sm_accuracy, experiment="eknown_{}".format(len(train_sample)))
+        benchmark_results += res
+        csvf.writerows(res)
         f.flush()
 
     print("Benchmark finished!")

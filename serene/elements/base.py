@@ -427,7 +427,7 @@ class BaseSemantic(object):
             print("\t", link)
         print()
 
-    def show(self):
-        OntologyVisualizer(self).show()
+    def show(self, outfile=None):
+        OntologyVisualizer(self, outfile=outfile).show()
         return
 

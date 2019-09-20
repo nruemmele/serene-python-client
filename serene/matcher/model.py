@@ -322,6 +322,7 @@ class Model(object):
 
         :return: Pandas Dataframe with prediction data
         """
+        logging.debug("Full predict on type {}".format(type(dataset)))
         if issubclass(type(dataset), DataSet):
             key = dataset.id
         else:

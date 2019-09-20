@@ -1,0 +1,171 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Chu}{2011}]{chu2011improving}
+G.G. Chu.
+\newblock {\em Improving combinatorial optimization}.
+\newblock PhD thesis, The University of Melbourne, 2011.
+
+\bibitem[\protect\citeauthoryear{de Medeiros \bgroup \em et al.\egroup
+  }{2015}]{Luciano:Mirror}
+L.F. de~Medeiros, F.~Priyatna, and O.~Corcho.
+\newblock {MIRROR}: Automatic {R2RML} mapping generation from relational
+  databases.
+\newblock In {\em ICWE}, pages 326--343. Springer, 2015.
+
+\bibitem[\protect\citeauthoryear{De~U\~{n}a \bgroup \em et al.\egroup
+  }{2016}]{deuna2016steiner}
+D.~De~U\~{n}a, G.~Gange, P.~Schachte, and P.J. Stuckey.
+\newblock Steiner tree problems with side constraints using constraint
+  programming.
+\newblock In {\em AAAI}, pages 3383--3389. AAAI Press, 2016.
+
+\bibitem[\protect\citeauthoryear{Dhamankar \bgroup \em et al.\egroup
+  }{2004}]{Dhamankar:imap}
+R.~Dhamankar, Y.~Lee, A.~Doan, A.Y. Halevy, and P.M. Domingos.
+\newblock {iMAP}: Discovering complex semantic matches between database
+  schemas.
+\newblock In {\em Proc. of {SIGMOD}}, 2004.
+
+\bibitem[\protect\citeauthoryear{Doan \bgroup \em et al.\egroup
+  }{2012}]{doan2012principles}
+A.~Doan, A.~Halevy, and Z.~Ives.
+\newblock Principles of data integration, 2012.
+
+\bibitem[\protect\citeauthoryear{Fagin \bgroup \em et al.\egroup
+  }{2009}]{Fagin:Clio}
+R.~Fagin, L.M. Haas, M.~Hern{\'a}ndez, R.J. Miller, et~al.
+\newblock Clio: Schema mapping creation and data exchange.
+\newblock In {\em Conceptual modeling: foundations and applications}, pages
+  198--236. Springer, 2009.
+
+\bibitem[\protect\citeauthoryear{Jim{\'e}nez-Ruiz \bgroup \em et al.\egroup
+  }{2015}]{Jimenez:Bootox}
+E.~Jim{\'e}nez-Ruiz, E.~Kharlamov, D.~Zheleznyakov, I.~Horrocks, et~al.
+\newblock {BootOX}: Practical mapping of {RDBs} to {OWL} 2.
+\newblock In {\em ISWC}, pages 113--132. Springer, 2015.
+
+\bibitem[\protect\citeauthoryear{Karp}{1972}]{Karp1972}
+R.M. Karp.
+\newblock Reducibility among combinatorial problems.
+\newblock In {\em Complexity of Computer Computations}, The IBM Research
+  Symposia Series, pages 85--103. 1972.
+
+\bibitem[\protect\citeauthoryear{Limaye \bgroup \em et al.\egroup
+  }{2010}]{Limaye:Annotating}
+G.~Limaye, S.~Sarawagi, and S.~Chakrabarti.
+\newblock Annotating and searching web tables using entities, types and
+  relationships.
+\newblock {\em Proc. of the VLDB Endowment}, 3(1-2):1338--1347, 2010.
+
+\bibitem[\protect\citeauthoryear{Mulwad \bgroup \em et al.\egroup
+  }{2013}]{Mulwad:Semantic}
+V.~Mulwad, T.~Finin, and A.~Joshi.
+\newblock Semantic message passing for generating linked data from tables.
+\newblock In {\em Proc. of ISWC}, 2013.
+
+\bibitem[\protect\citeauthoryear{Nethercote \bgroup \em et al.\egroup
+  }{2007}]{minizinc}
+N.~Nethercote, P.J. Stuckey, R.~Becket, S.~Brand, G.J. Duck, and G.~Tack.
+\newblock {MiniZinc: Towards a Standard CP Modelling Language}.
+\newblock In {\em Procs. of CP2007}, volume 4741 of {\em LNCS}. Springer, 2007.
+
+\bibitem[\protect\citeauthoryear{Petermann \bgroup \em et al.\egroup
+  }{2017}]{petermann2017dimspan}
+A.~Petermann, M.~Junghanns, and E.~Rahm.
+\newblock {DIMSpan} - transactional frequent subgraph mining with distributed
+  in-memory dataflow systems.
+\newblock {\em arXiv preprint arXiv:1703.01910}, 2017.
+
+\bibitem[\protect\citeauthoryear{Pham \bgroup \em et al.\egroup
+  }{2016}]{Pham:semantic}
+M.~Pham, S.~Alse, C.A. Knoblock, and P.~Szekely.
+\newblock Semantic labeling: a domain-independent approach.
+\newblock In {\em Proc. of ISWC}, pages 446--462. Springer, 2016.
+
+\bibitem[\protect\citeauthoryear{Pinkel \bgroup \em et al.\egroup
+  }{2016}]{Pinkel:rodi}
+C.~Pinkel, C.~Binnig, E.~Jim{\'e}nez-Ruiz, E.~Kharlamov, et~al.
+\newblock {RODI}: Benchmarking relational-to-ontology mapping generation
+  quality.
+\newblock {\em Semantic Web}, 2016.
+
+\bibitem[\protect\citeauthoryear{Rahm and
+  Bernstein}{2001}]{Rahm:2001:SAA:767149.767154}
+E.~Rahm and P.A. Bernstein.
+\newblock A survey of approaches to automatic schema matching.
+\newblock {\em The VLDB Journal}, 10(4):334--350, 2001.
+
+\bibitem[\protect\citeauthoryear{Ramnandan \bgroup \em et al.\egroup
+  }{2015}]{Ramnandan:Assigning}
+S.K. Ramnandan, A.~Mittal, C.A. Knoblock, and P.~Szekely.
+\newblock Assigning semantic labels to data sources.
+\newblock In {\em Proc. of ESWC}, 2015.
+
+\bibitem[\protect\citeauthoryear{R{\'e}gin}{1994}]{regin1994filtering}
+J.-C. R{\'e}gin.
+\newblock A filtering algorithm for constraints of difference in csps.
+\newblock In {\em AAAI}, volume~94, pages 362--367, 1994.
+
+\bibitem[\protect\citeauthoryear{Ritze and Bizer}{2017}]{Ritze:matching}
+D.~Ritze and C.~Bizer.
+\newblock Matching web tables to {DBpedia} - {A} feature utility study.
+\newblock In {\em Proc. of EDBT}, pages 210--221, 2017.
+
+\bibitem[\protect\citeauthoryear{R\"ummele \bgroup \em et al.\egroup
+  }{2018}]{ruemmele2018evaluating}
+N.\ R\"ummele, Y.\ Tyshetskiy, and A.~Collins.
+\newblock Evaluating approaches for supervised semantic labeling.
+\newblock In {\em Proc.\ of the Workshop on Linked Data on the Web}, 2018.
+
+\bibitem[\protect\citeauthoryear{Shvaiko and Euzenat}{2013}]{shvaiko2013}
+P.~Shvaiko and J.~Euzenat.
+\newblock Ontology matching: State of the art and future challenges.
+\newblock {\em IEEE Transactions on Knowledge and Data Engineering},
+  25(1):158--176, 2013.
+
+\bibitem[\protect\citeauthoryear{Spanos \bgroup \em et al.\egroup
+  }{2012}]{Spanos:semweb}
+D.-E. Spanos, P.~Stavrou, and N.~Mitrou.
+\newblock Bringing relational databases into the semantic web: {A} survey.
+\newblock {\em Semantic Web}, 3(2):169--209, 2012.
+
+\bibitem[\protect\citeauthoryear{Suchanek \bgroup \em et al.\egroup
+  }{2007}]{suchanek2007yago}
+F.M. Suchanek, G.~Kasneci, and G.~Weikum.
+\newblock Yago: a core of semantic knowledge.
+\newblock In {\em Proc.\ of the international conference on World Wide Web},
+  pages 697--706. ACM, 2007.
+
+\bibitem[\protect\citeauthoryear{Taheriyan \bgroup \em et al.\egroup
+  }{2013}]{Taheriyan2013}
+M.~Taheriyan, C.~A. Knoblock, P.~Szekely, and J.L. Ambite.
+\newblock {\em A Graph-Based Approach to Learn Semantic Descriptions of Data
+  Sources}, pages 607--623.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2013.
+
+\bibitem[\protect\citeauthoryear{Taheriyan \bgroup \em et al.\egroup
+  }{2016a}]{taheriyan2016learning}
+M.~Taheriyan, C.A. Knoblock, P.~Szekely, and J.L. Ambite.
+\newblock Learning the semantics of structured data sources.
+\newblock {\em Web Semantics: Science, Services and Agents on the World Wide
+  Web}, 37:152--169, 2016.
+
+\bibitem[\protect\citeauthoryear{Taheriyan \bgroup \em et al.\egroup
+  }{2016b}]{Taheriyan:Leveraging}
+M.~Taheriyan, C.A. Knoblock, P.~Szekely, and J.L. Ambite.
+\newblock Leveraging linked data to discover semantic relations within data
+  sources.
+\newblock In {\em Proc. of ISWC}, pages 549--565, 2016.
+
+\bibitem[\protect\citeauthoryear{Venetis \bgroup \em et al.\egroup
+  }{2011}]{Venetis:Recovering}
+P.~Venetis, A.~Halevy, J.~Madhavan, M.~Pa{\c{s}}ca, et~al.
+\newblock Recovering semantics of tables on the web.
+\newblock {\em Proc. of the VLDB Endowment}, 4(9), 2011.
+
+\bibitem[\protect\citeauthoryear{Yan and Han}{2002}]{yan2002gspan}
+X.~Yan and J.~Han.
+\newblock {gSpan}: Graph-based substructure pattern mining.
+\newblock In {\em Proc.\ of ICDM}, pages 721--724. IEEE, 2002.
+
+\end{thebibliography}

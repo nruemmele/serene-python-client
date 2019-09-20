@@ -357,7 +357,10 @@ class OntologyEndpoint(IdentifiableEndpoint):
         keys = self._api.keys()
         ontologies = []
         for k in keys:
+            print("Obtaining ontology files...")
             on = Ontology(file=self._api.owl_file(k))
+            print("Updating ontology files...")
+
             on.update(self._api.item(k))
             ontologies.append(on)
         return tuple(ontologies)

@@ -16,7 +16,7 @@ import json
 
 from serene.utils import convert_datetime
 from serene.elements import Column
-from serene.elements.semantics.ontology import Ontology
+from serene.elements.ontology import Ontology
 
 
 class DataSet(object):
@@ -43,6 +43,9 @@ class DataSet(object):
             c.name: c.sample for c in self.columns
         })
         self._stored = True
+
+    def __hash__(self):
+        return hash("{}.{}.{}".format(self.id, self.date_created, self.date_modified))
 
     @property
     def stored(self):

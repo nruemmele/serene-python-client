@@ -20,6 +20,7 @@ from serene.elements.semantics.base import KARMA_DEFAULT_NS
 _logger = logging.getLogger()
 _logger.setLevel(logging.DEBUG)
 
+
 class TestIntegrationGraph(TestWithServer):
     def __init__(self, method_name="runTest"):
         super().__init__(method_name)

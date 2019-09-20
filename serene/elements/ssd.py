@@ -13,16 +13,17 @@ from collections import OrderedDict
 from collections import defaultdict
 
 from .base import BaseSemantic, DEFAULT_NS, UNKNOWN_CN, UNKNOWN_DN, ALL_CN, OBJ_PROP
-from ..elements import DataProperty, ObjectProperty, SSDSearchable, SSDLink, ClassNode, DataNode
-from ..elements import DataLink, ObjectLink, ClassInstanceLink, ColumnLink, SubClassLink
-from ..elements import Mapping, Column, Class
-from ..dataset import DataSet
-from ..semantics.ontology import Ontology
+from .elements import DataProperty, ObjectProperty, SSDSearchable, SSDLink, ClassNode, DataNode
+from .elements import DataLink, ObjectLink, ClassInstanceLink, ColumnLink, SubClassLink
+from .elements import Mapping, Column, Class
+from .dataset import DataSet
+from .ontology import Ontology
 from serene.utils import gen_id, convert_datetime, flatten, Searchable
 from serene.visualizers import SSDVisualizer
 
 _logger = logging.getLogger()
 _logger.setLevel(logging.WARN)
+
 
 class SSD(object):
     """

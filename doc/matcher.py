@@ -8,6 +8,20 @@ except ImportError as e:
 from serene.matcher.core import SchemaMatcher
 import os.path
 
+import logging
+rootLogger = logging.getLogger()
+logging_level = logging.DEBUG
+logFormatter = logging.Formatter("%(asctime)s [%(levelname)-5.5s] %(module)s [%(funcName)s]: %(message)s",
+                                     "%Y-%m-%d %H:%M:%S")
+rootLogger.setLevel(logging_level)
+for h in rootLogger.handlers:
+    h.setLevel(logging_level)
+    h.setFormatter(logFormatter)
+
+for log_name in ['werkzeug', 'pika', 'sparql', 'py4j', 'urllib3']:
+    slogger = logging.getLogger(log_name)
+    slogger.setLevel(logging.WARN)
+
 #
 # First setup the example dataset path...
 #
@@ -32,7 +46,7 @@ print(dm.datasets)
 #
 # Show a summary of all datasets as a Pandas data frame
 #
-print(dm.datasets.summary)
+# print(dm.datasets.summary)
 #   dataset_id        name   description     created    modified     num_rows  num_cols
 #  4  42fv87g2    name.csv   test1          2016-04-07  2016-04-07       100        20
 #  5  8ut20yet   phone.csv   test2          2016-04-07  2016-04-07       100        10
@@ -56,7 +70,7 @@ print(dm.datasets)
 
 print()
 print("We can look at the dataset properties")
-print("filename:", new_dataset.set_filename)
+print("filename:", new_dataset.filename)
 print("id:", new_dataset.id)
 print("sample: ", new_dataset.sample)
 print("summary:", new_dataset.summary)
@@ -181,7 +195,7 @@ datasets = [
 
 
 for d in datasets:
-    print(d.set_filename)
+    print(d.filename)
 
 #
 # Create a new model.
@@ -370,6 +384,7 @@ print("The final state for {} is {}".format(new_model.id, new_model.state))
 # ]
 
 ds = datasets[2]
+logging.debug("Type of ds: {}".format(type(ds)))
 print()
 print("We now predict for each dataset")
 print(new_model.predict(ds))

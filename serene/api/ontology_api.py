@@ -104,15 +104,16 @@ class OntologyAPI(HTTPObject):
             path = os.path.join(
                 tempfile.gettempdir(),
                 "{}{}".format(self._gen_id(), extension))
-
+            logging.debug("Writing ontology to path {}".format(path))
             r = requests.get(uri, stream=True)
+            logging.debug("Ontology files checking request response")
 
             if r.status_code == 200:
                 with self._create_local_owl_file(path) as f:
                     for chunk in r.iter_content(1024):
                         f.write(chunk)
             else:
-                raise Exception("Failed to get ontology file. Status code: {}".format(r.url))
+                raise Exception("Failed to get ontology file. Status code: {} for the url {}".format(r.status_code, r.url))
         except Exception as e:
             logging.error(e)
             raise InternalError("Failed to list ontology", e)

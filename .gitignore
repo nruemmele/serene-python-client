@@ -28,11 +28,14 @@ stp/resources/*.tar.gz
 stp/minizinc/chuffed_20170525/
 stp/resources/storage/*
 stp/resources/museum_stp_benchmark/
-stp/paper_aaai/*.bbl
-stp/paper_aaai/*.aux
-stp/paper_aaai/*.blg
-stp/paper_aaai/*.log
-stp/paper_aaai/*.gz
+stp/paper/*.bbl
+stp/paper/*.aux
+stp/paper/*.blg
+stp/paper/*.log
+stp/paper/*.gz
+stp/paper/*.pdf
+
+
 
 
 df-testing/*

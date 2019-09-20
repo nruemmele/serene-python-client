@@ -10,8 +10,8 @@ import time
 from ..matcher import ModelState, Status, ModelType, SamplingStrategy
 from ..utils import convert_datetime, get_label, get_prefix
 from .dataset import DataSet
-from .semantics.ontology import Ontology
-from .semantics.ssd import SSD
+from .ontology import Ontology
+from .ssd import SSD
 import networkx as nx
 import json
 import csv
